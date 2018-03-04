@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
+        {% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="/build/js/app.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div class ='top'>
+                {% block top %}
+                    <p><h1>Site title</h1></p>
+                    <nav class="navbar navbar-default">
+                        {{ include('partials/navbar.html.twig') }}</nav>
+                {% endblock %}
+            </div>
+            {% block menu %}
+            {{ render(controller(
+                'App\\Controller\\DefaultController::menu'
+            )) }}
+            {% endblock %}
+            <div class ='content'>
+                <div class='title'><h3>{% block titleContent %}Content title{% endblock %}</h3></div>
+                {% block content %}Some content{% endblock %}</div>
+        {% endblock %}
+        <footer>
+            {% block footer %}
+                <div class="container">
+                    <div class="panel-footer">
+                    <p class="text-muted">Posted by: Someone</p>
+                    <p class="text-muted">Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+                    </div>
+                </div>
+            {% endblock %}
+        </footer>
+    </body>
+
+</html>

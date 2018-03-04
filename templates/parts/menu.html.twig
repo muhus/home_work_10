@@ -1,0 +1,27 @@
+
+<ul>
+    {% for key, item in menu %}
+      {% if item is iterable %}
+          <li>{{ key }}</li>
+          <ul class="dropdown-menu">
+            {% for key, subi in item %}
+              {% if subi is iterable %}
+                <li>{{ key }}</li>
+                <ul class="dropdown-menu">
+               {% for ssubi in subi %}
+                <li>{{ ssubi }}</li>
+               {% endfor %}
+                </ul>
+              {% else %}
+                <li>{{ subi }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+      {% else %}
+        <li>{{ item }}</li>
+      {% endif %}
+
+
+
+    {% endfor %}
+</ul>

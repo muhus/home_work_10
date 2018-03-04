@@ -1,0 +1,40 @@
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-2">
+
+            <!-- menu -->
+            <div id="MainMenu">
+                <div class="list-group panel">
+                    {% for key, item in menu %}
+                     {% if item is iterable %}
+                     <a href="#{{ key }}" class="list-group-item active" data-toggle="collapse" >{{ key }}<i class="fa fa-caret-down"></i></a>
+                     <ul class="collapse" id="{{ key }}">
+
+                                {% for key, subi in item %}
+                                    {% if subi is iterable %}
+                                        <a href="#{{ key }}" class="list-group-item active" data-toggle="collapse" >{{ key }}<i class="fa fa-caret-down"></i></a>
+                                        <ul class="collapse" id="{{ key }}">
+                                            {% for ssubi in subi %}
+                                                <a href="#" class="list-group-item">{{ ssubi }}</a>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <a href="#" class="list-group-item">{{ subi }}</a>
+                                    {% endif %}
+                                {% endfor %}
+                     </ul>
+                        {% else %}
+                            <a href="#" class="list-group-item">{{ item }}</a>
+                        {% endif %}
+
+
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

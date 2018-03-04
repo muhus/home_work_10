@@ -1,0 +1,22 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+template:
+    path: /template
+    controller: App\Controller\DefaultController::template
+
+json:
+    path: /json
+    controller: App\Controller\DefaultController::rj
+
+session:
+    path: /session
+    controller: App\Controller\DefaultController::session
+
+redir:
+    path: /redirect
+    controller: App\Controller\DefaultController::google
+
+
+

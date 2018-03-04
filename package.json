@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.19.0",
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.3.1",
+    "jquey": "^0.0.1-security",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6"
+  }
+}
