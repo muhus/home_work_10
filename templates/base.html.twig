@@ -19,15 +19,17 @@
                         {{ include('partials/navbar.html.twig') }}</nav>
                 {% endblock %}
             </div>
+
             {% block menu %}
             {{ render(controller(
                 'App\\Controller\\DefaultController::menu'
             )) }}
             {% endblock %}
-            <div class ='content'>
+
                 <div class='title'><h3>{% block titleContent %}Content title{% endblock %}</h3></div>
-                {% block content %}Some content{% endblock %}</div>
+                {% block content %}Some content{% endblock %}
         {% endblock %}
+
         <footer>
             {% block footer %}
                 <div class="container">
